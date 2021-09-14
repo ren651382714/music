@@ -1,8 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-		<p>{{$store.state.arrs}}</p>
+   
+		<p>{{arrs}}</p>
   </div>
 </template>
 
@@ -14,9 +13,14 @@ import {mapState} from "vuex";
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+   
   },
-	
+	setup(){
+		let arrs =  JSON.parse(localStorage.getItem('myInfo'))
+		return{
+			arrs
+		}
+	}
 	
 }
 </script>
